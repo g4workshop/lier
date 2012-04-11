@@ -336,7 +336,7 @@ const CC3Vector LiceFace2[6] = {
     
     static double licePos[MAX_LICE_NUMBER][3] = { { -4,8,-20},{4,12,-20},{3,4,-20},{6,15,-20},{-4,17,-20},{-6,26,-20}}; 
     
-   static float moveDirection[MAX_LICE_NUMBER] = { 3.14/6, 3.14/5,3.14/10,3.14/2,3.14/7,3.14/9  };
+    static float moveDirection[MAX_LICE_NUMBER] = { PI/6, PI/5,PI/10,PI/2,PI/7,PI/9  };
     static float speed[MAX_LICE_NUMBER] = {0.1,0.2,0.3,0.4,0.5,0.6  };
     for( int i = 0; i < MAX_LICE_NUMBER ; i++ ) {
         
@@ -361,8 +361,6 @@ const CC3Vector LiceFace2[6] = {
                 moveDirection[i] = -  moveDirection[i];;
                 licePos[i][Y] = 1;
             }
-     
-
         }
         [modelView populateFromTranslation:CC3VectorMake(licePos[i][0], licePos[i][1],-50)];   
         static bool firstPause = true;
