@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
+
 #import "G4AppDelegate.h"
 
 #import "G4ViewController.h"
@@ -24,7 +25,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+
+  
+     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[[G4ViewController alloc] initWithNibName:@"G4ViewController_iPhone" bundle:nil] autorelease];
@@ -33,6 +36,8 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
+
     return YES;
 }
 

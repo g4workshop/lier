@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
 
 @interface G4ViewController : UIViewController
+
+-(void)finishPlay : (NSNotification *) n;
+@property (assign) MPMoviePlayerController *mplayer;
 
 @end
