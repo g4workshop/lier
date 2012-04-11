@@ -266,8 +266,7 @@ const CC3Vector LiceFace2[6] = {
     glUniformMatrix4fv(_projectionUniform, 1, 0, projection.glMatrix);
     
     glViewport(0,0, self.frame.size.width, self.frame.size.height);
-   
-    const float PI = PI;
+
     int y[][4] = { { 4,8,-20, PI/3},{5,-8,-20,PI/5},{7,4,-20,PI/6},{-4,-4,-20,PI/2},{0,0,-20,PI*2/3}, {-4,5,0,PI*2/5}};
     
     for( int i = 0; i < MAX_LICE_NUMBER ; i++ ) {
@@ -351,19 +350,18 @@ const CC3Vector LiceFace2[6] = {
             licePos[i][Y] += speed[i]*sinf(moveDirection[i]);
             
             if(licePos[i][X] > 8 ) 
-                moveDirection[i] = 3.14 -  moveDirection[i];
+                moveDirection[i] = PI -  moveDirection[i];
             else if( licePos[i][X] < -8)
-                moveDirection[i] = 3.14 +  moveDirection[i];;
+                moveDirection[i] = PI +  moveDirection[i];;
 
 
             if(licePos[i][Y] > 24 ) 
-                moveDirection[i] = 3.14/2+  moveDirection[i];
+                moveDirection[i] = PI /2+  moveDirection[i];
             else if( licePos[i][Y] <0) {
                 moveDirection[i] = -  moveDirection[i];;
                 licePos[i][Y] = 1;
             }
-            if( i == 5) 
-                NSLog(@"%f",moveDirection[i]);
+     
 
         }
         [modelView populateFromTranslation:CC3VectorMake(licePos[i][0], licePos[i][1],-50)];   
